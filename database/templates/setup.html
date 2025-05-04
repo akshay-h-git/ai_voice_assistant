@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setup - AI Voice Assistant</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .dark body {
+      background: linear-gradient(135deg, #1f1b2e, #2a2d73, #3b82f6);
+      background-attachment: fixed;
+      background-size: cover;
+}
+  </style>
+  <script>
+    if (
+      localStorage.getItem("theme") === "dark" ||
+      (!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  </script>
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+  <header class="bg-white shadow-md dark:bg-gray-800 dark:shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold text-blue-600 dark:text-blue-400">AI Voice Assistant</a>
+      <nav class="space-x-6">
+        <a href="/login" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 font-medium">Login</a>
+        <a href="/documentation" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 font-medium">Documentation</a>
+        <a href="/setup" class="text-blue-600 dark:text-blue-400 font-medium underline">Setup</a>
+        <a href="/contact" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 font-medium">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="px-6 py-20 max-w-6xl mx-auto">
+    <section class="text-center mb-16">
+      <h1 class="text-4xl sm:text-5xl font-extrabold mb-4 text-blue-600 dark:text-blue-400">Setup Instructions</h1>
+      <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        Follow these simple steps to get your AI Voice Assistant up and running in no time.
+      </p>
+    </section>
+
+    <section class="space-y-10">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md">
+        <h2 class="text-2xl font-semibold mb-4 text-blue-500">1. Download the Assistant</h2>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">Download the latest version from the link below:</p>
+        <a href="download/ai_voice_assistant.zip" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition">Download Now</a>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md">
+        <h2 class="text-2xl font-semibold mb-4 text-blue-500">2. Extract the Files</h2>
+        <p class="text-gray-700 dark:text-gray-300">Right-click the ZIP file and choose <strong>Extract All</strong> to unzip the assistant files to your preferred location.</p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md">
+        <h2 class="text-2xl font-semibold mb-4 text-blue-500">3. Install Requirements</h2>
+        <p class="text-gray-700 dark:text-gray-300 mb-2">Open a terminal/command prompt in the extracted folder and run:</p>
+        <pre class="bg-gray-100 dark:bg-gray-700 text-sm p-4 rounded-md overflow-x-auto text-gray-800 dark:text-gray-200"><code>pip install -r requirements.txt</code></pre>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md">
+        <h2 class="text-2xl font-semibold mb-4 text-blue-500">4. Run the Assistant</h2>
+        <p class="text-gray-700 dark:text-gray-300 mb-2">In the same terminal, start the assistant with:</p>
+        <pre class="bg-gray-100 dark:bg-gray-700 text-sm p-4 rounded-md overflow-x-auto text-gray-800 dark:text-gray-200"><code>python start.py</code></pre>
+        <p class="text-gray-700 dark:text-gray-300 mt-2">First make sure that you have registered in the web. Make sure your microphone is working!</p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md">
+        <h2 class="text-2xl font-semibold mb-4 text-blue-500">
+          5. Customizing AI Voice Assistant and Adding API Key to the AI Voice Assistant
+        </h2>
+        <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+          <li>Go to <code>Login Page</code> to customize the assistant's wake word, voice settings, and other preferences.</li>
+          <li>Insert your API keys (e.g., for WeatherAPI, Gemini, or other services) after <code>Login</code> under the appropriate fields.</li>
+          <li>Ensure your microphone is enabled and accessible for Python-based applications in your system settings.</li>
+        </ul>
+        <div class="mt-6 text-center">
+          <a href="/login" class="px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition duration-300">
+            Customize
+          </a>
+        </div>
+      </div>            
+    </section>
+  </main>
+
+  <footer class="text-center py-6 text-sm text-gray-500 dark:text-gray-400">
+    &copy; 2025 AI Voice Assistant. Built with 💡 and Python.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,14 @@
+Flask
+google-generativeai
+gTTS
+Pillow
+pygame
+pyautogui
+pyttsx3
+requests
+SpeechRecognition
+tk
+wikipedia
+Werkzeug
+python-dateutil
+shutil

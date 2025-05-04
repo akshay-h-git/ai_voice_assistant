@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation - AI Voice Assistant</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .dark body {
+      background: linear-gradient(135deg, #1f1b2e, #2a2d73, #3b82f6);
+      background-attachment: fixed;
+      background-size: cover;
+}
+  </style>
+  <style>
+    @layer utilities {
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      @keyframes slideUp {
+        0% { transform: translateY(20px); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+      }
+
+      .animate-fadeIn {
+        animation: fadeIn 1s ease-out forwards;
+      }
+
+      .animate-slideUp {
+        animation: slideUp 0.8s ease-out forwards;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-100 animate-fadeIn">
+  <!-- Navigation Bar -->
+  <header class="bg-white shadow-md dark:bg-gray-800 dark:shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold text-blue-600 dark:text-blue-400">
+        AI Voice Assistant
+      </a>
+      <nav class="space-x-6">
+        <a href="/documentation" class="text-blue-600 dark:text-blue-400 font-medium">Documentation</a>
+        <a href="/setup" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 font-medium">Setup</a>
+        <a href="/contact" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 font-medium">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-10">
+    <h1 class="text-3xl font-bold text-blue-400 mb-6 transition-all duration-300 hover:text-blue-300">Documentation</h1>
+
+    <section class="space-y-8">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md animate-slideUp">
+        <h2 class="text-2xl font-semibold text-blue-500 mb-4">🗣️ AI Voice Assistant User Guide</h2>
+        <p class="text-gray-700 dark:text-gray-300">Your AI Voice Assistant is designed to understand voice commands and perform a variety of tasks to assist you in daily activities.</p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md animate-slideUp">
+        <h3 class="text-xl font-semibold text-blue-500 mb-2">🎤 Voice Interaction</h3>
+        <p class="text-gray-400 text-sm italic mb-2">Interact with the assistant by saying the wake word or pressing the Listen button manually.</p>
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+          <li><strong>Wake Word Activation:</strong> Say <code>"Python"</code> to activate the assistant.<br><em>Example:</em><br>You: "Python"<br>Assistant: "Yes?"</li>
+          <li><strong>Manual Activation:</strong> Click the <strong>"Listen"</strong> button in the application interface.</li>
+        </ul>
+        <p class="text-gray-400 text-sm italic mb-2">you can change the wake word later in settings</p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md animate-slideUp">
+        <h3 class="text-xl font-semibold text-blue-500 mb-2">⏰ Reminders and Alarms</h3>
+        <p class="text-gray-400 text-sm italic mb-2">Set reminders and alarms using simple voice commands to manage your day.</p>
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+          <li>"Remind me at 5 PM"</li>
+          <li>"Set alarm for 6:30 AM."</li>
+        </ul>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md animate-slideUp">
+        <h3 class="text-xl font-semibold text-blue-500 mb-2">🌦️ Weather Updates</h3>
+        <p class="text-gray-400 text-sm italic mb-2">Ask for real-time weather updates for any city.</p>
+        <p class="text-gray-700 dark:text-gray-300"><strong>Command:</strong> "weather in Mangalore"</p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md animate-slideUp">
+        <h3 class="text-xl font-semibold text-blue-500 mb-2">🌐 Web Navigation</h3>
+        <p class="text-gray-400 text-sm italic mb-2">Open your favorite websites like Google or YouTube with your voice.</p>
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+          <li>"Open Google"</li>
+          <li>"Open YouTube"</li>
+          <li>"Open Facebook"</li>
+          <li>"Open LinkedIn"</li>
+        </ul>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md animate-slideUp">
+        <h3 class="text-xl font-semibold text-blue-500 mb-2">🎵 Music Playback</h3>
+        <p class="text-gray-400 text-sm italic mb-2">Control music playback using voice commands like play, pause, or resume.</p>
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+          <li>"Play wolf."</li>
+          <li>"Pause music." / "Resume music."</li>
+        </ul>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md animate-slideUp">
+        <h3 class="text-xl font-semibold text-blue-500 mb-2">📰 News Updates</h3>
+        <p class="text-gray-400 text-sm italic mb-2">Get the latest headlines spoken aloud by the assistant.</p>
+        <p class="text-gray-700 dark:text-gray-300"><strong>Command:</strong> "today's news?"</p>
+        <p class="text-gray-700 dark:text-gray-300">The assistant reads top 3 headlines from a reliable news source.</p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md animate-slideUp">
+        <h3 class="text-xl font-semibold text-blue-500 mb-2">📂 File and Folder Management</h3>
+        <p class="text-gray-400 text-sm italic mb-2">Create, delete, and search files or folders using your voice.</p>
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+          <li>"Create a file named notes.txt"</li>
+          <li>"Delete the file named notes.txt"</li>
+          <li>"Search for file named report.docx"</li>
+          <li>"Create a folder named Projects"</li>
+          <li>"Delete the folder named Projects"</li>
+          <li>"Read the file notes.txt"</li>
+        </ul>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md animate-slideUp">
+        <h3 class="text-xl font-semibold text-blue-500 mb-2">🖥️ System Operations</h3>
+        <p class="text-gray-400 text-sm italic mb-2">Control basic system functions through voice, like locking or screenshots.</p>
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+          <li>"Take a screenshot"</li>
+          <li>"Lock the system"</li>
+        </ul>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md animate-slideUp">
+        <h3 class="text-xl font-semibold text-blue-500 mb-2">🧩 Opening Desktop Applications</h3>
+        <p class="text-gray-400 text-sm italic mb-2">Launch desktop applications like Notepad or VS Code by voice.</p>
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+          <li>"Open Notepad"</li>
+          <li>"Open Calculator"</li>
+          <li>"Open Command Prompt"</li>
+          <li>"Open Chrome"</li>
+          <li>"Open VS Code"</li>
+        </ul>
+        <p class="text-gray-700 dark:text-gray-300">The assistant uses your system's default application paths to launch these apps.</p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md animate-slideUp">
+        <h3 class="text-xl font-semibold text-blue-500 mb-2">📚 Information Retrieval</h3>
+        <p class="text-gray-400 text-sm italic mb-2">Ask factual questions and get concise answers instantly.</p>
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+          <li>"Who is Albert Einstein?"</li>
+          <li>"What is quantum physics?"</li>
+          <li>"Tell me about the Eiffel Tower."</li>
+        </ul>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md animate-slideUp">
+        <h3 class="text-xl font-semibold text-blue-500 mb-2">➗ Calculations</h3>
+        <p class="text-gray-400 text-sm italic mb-2">Use voice to solve basic arithmetic and math problems.</p>
+        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+          <li>"Calculate 15 plus 27"</li>
+          <li>"What is 9 times 8?"</li>
+        </ul>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md animate-slideUp">
+        <h3 class="text-xl font-semibold text-blue-500 mb-2">🤖 AI-Powered Responses</h3>
+        <p class="text-gray-400 text-sm italic mb-2">Ask for jokes, stories, or other creative content powered by AI.</p>
+        <p class="text-gray-700 dark:text-gray-300"><strong>Command:</strong> "Tell me a joke."</p>
+        <p class="text-gray-700 dark:text-gray-300">The assistant responds using AI-generated output.</p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md animate-slideUp">
+        <h3 class="text-xl font-semibold text-blue-500 mb-2">❌ Closing the Assistant</h3>
+        <p class="text-gray-400 text-sm italic mb-2">Safely shut down the assistant using a closing command.</p>
+        <p class="text-gray-700 dark:text-gray-300"><strong>Command:</strong> "Close assistant."</p>
+        <p class="text-gray-700 dark:text-gray-300">The assistant shuts down the application safely.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center py-6 text-sm text-gray-500 dark:text-gray-400">
+    &copy; 2025 AI Voice Assistant. Built with 💡 and Python.
+  </footer>
+</body>
+</html>

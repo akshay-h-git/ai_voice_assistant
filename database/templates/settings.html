@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Assistant Settings</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .dark body {
+      background: linear-gradient(135deg, #1f1b2e, #2a2d73, #3b82f6);
+      background-attachment: fixed;
+      background-size: cover;
+    }
+  </style>
+  <script>
+    if (
+      localStorage.getItem("theme") === "dark" ||
+      (!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  </script>
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+
+  <!-- Modal Popup -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg max-w-sm w-full text-center">
+        {% for category, message in messages %}
+          <div class="mb-4 text-sm {{ 'bg-green-100 text-green-800' if category == 'success' else 'bg-red-100 text-red-800' }} rounded-lg">
+            <h2 class="text-xl font-semibold mb-4">{{ 'Success' if category == 'success' else 'Error' }}</h2>
+            <p class="text-gray-700 dark:text-gray-300 mb-6">{{ message }}</p>
+            <button onclick="window.location.href='/'" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">OK</button>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+{% endwith %}
+
+  <header class="bg-white shadow-md dark:bg-gray-800 dark:shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="{{ url_for('home') }}" class="text-2xl font-bold text-blue-600 dark:text-blue-400">AI Voice Assistant</a>
+      
+    </div>
+  </header>
+
+  <div class="text-center mt-8">
+    <h1 class="text-3xl font-bold text-blue-600 dark:text-blue-400">Hi, {{ name }}</h1>
+  </div>
+  
+
+  <main class="px-6 py-16 max-w-3xl mx-auto">
+    <h1 class="text-3xl font-bold text-blue-500 mb-8 text-center">Assistant Configuration</h1>
+    <form class="space-y-6" method="POST" action="{{ url_for('settings', email=email) }}">
+      <div>
+        <label for="gemini_api" class="block text-sm font-semibold mb-1">Gemini API Key</label>
+        <input type="text" id="gemini_api" name="gemini_api" value="{{ user_settings[2] if user_settings else '' }}" class="w-full px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 dark:text-white">
+      </div>
+      <div>
+        <label for="weather_api" class="block text-sm font-semibold mb-1">Weather API Key</label>
+        <input type="text" id="weather_api" name="weather_api" value="{{ user_settings[3] if user_settings else '' }}" class="w-full px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 dark:text-white">
+      </div>
+      <div>
+        <label for="news_api" class="block text-sm font-semibold mb-1">News API Key</label>
+        <input type="text" id="news_api" name="news_api" value="{{ user_settings[4] if user_settings else '' }}" class="w-full px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 dark:text-white">
+      </div>
+      <div>
+        <label for="wake_word" class="block text-sm font-semibold mb-1">Wake Word</label>
+        <input type="text" id="wake_word" name="wake_word" value="{{ user_settings[5] if user_settings else 'Python' }}" class="w-full px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 dark:text-white">
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label for="webpage_name" class="block text-sm font-semibold mb-1">Custom Webpage Name</label>
+          <input type="text" id="webpage_name" name="webpage_name" value="{{ user_settings[6] if user_settings else '' }}" class="w-full px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 dark:text-white">
+        </div>
+        <div>
+          <label for="webpage_url" class="block text-sm font-semibold mb-1">Custom Webpage URL</label>
+          <input type="url" id="webpage_url" name="webpage_url" value="{{ user_settings[7] if user_settings else '' }}" class="w-full px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 dark:text-white">
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label for="desktop_name" class="block text-sm font-semibold mb-1">Custom Desktop Name</label>
+          <input type="text" id="desktop_name" name="desktop_name" value="{{ user_settings[8] if user_settings else '' }}" class="w-full px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 dark:text-white">
+        </div>
+        <div>
+          <label for="desktop_path" class="block text-sm font-semibold mb-1">Custom Desktop Path</label>
+          <input type="text" id="desktop_path" name="desktop_path" value="{{ user_settings[9] if user_settings else '' }}" class="w-full px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 dark:text-white">
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label for="music_name" class="block text-sm font-semibold mb-1">Music Name</label>
+          <input type="text" id="music_name" name="music_name" value="{{ user_settings[10] if user_settings else '' }}" class="w-full px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 dark:text-white">
+        </div>
+        <div>
+          <label for="music_url" class="block text-sm font-semibold mb-1">Music URL</label>
+          <input type="url" id="music_url" name="music_url" value="{{ user_settings[11] if user_settings else '' }}" class="w-full px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 dark:text-white">
+        </div>
+      </div>
+      <div class="text-center pt-6">
+        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition font-semibold">Save Settings</button>
+      </div>
+    </form>    
+  </main>
+
+  <footer class="text-center py-6 text-sm text-gray-500 dark:text-gray-400">
+    &copy; 2025 AI Voice Assistant. Built with 💡 and Python.
+  </footer>
+</body>
+</html>
