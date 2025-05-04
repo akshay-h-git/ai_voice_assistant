@@ -83,7 +83,6 @@ def create_login_window():
                 # Successful login
                 error_message.config(text="")
                 window.destroy()
-                #test.main(email)  # pass email to test.py
                 subprocess.Popen(['python', 'main.py', email])
                 
             else:
@@ -104,10 +103,6 @@ def create_login_window():
 
     return window
 
-
-#def run_assistant_window():
-    # Start the test.py logic after login
-    test.main()  # Assuming test.py has a `main()` function that runs the assistant window
 
 
 # Demo action
